@@ -1,0 +1,171 @@
+#chapter-progress {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 860px;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    padding: 10px 30px;
+    z-index: 100;
+    box-sizing: border-box;
+    border-radius: 8px 8px 0 0;
+}
+
+#chapter-progress-bar {
+    flex: 1;
+    height: 6px;
+    background-color: #e0e0e0;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: height 0.2s ease;
+}
+
+#chapter-progress-bar:hover {
+    height: 8px;
+}
+
+#chapter-progress-bar::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: var(--progress-width, 0%);
+    background-color: #4CAF50;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+#chapter-progress-tools {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+}
+
+#chapter-progress > div {
+    display: flex;
+    align-items: center;
+    gap: 0;
+}
+
+.chapter-progress-tool {
+    cursor: pointer;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #333;
+}
+
+.chapter-progress-tool:hover {
+    transform: scale(1.1);
+    color: #4CAF50;
+}
+
+/* Ícone: Primeiro capítulo */
+#chapter-progress-first {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>');
+}
+
+/* Ícone: Capítulo anterior */
+#chapter-progress-previous {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"/></svg>');
+}
+
+/* Ícone/Texto: Capítulo atual */
+#chapter-progress-current {
+    font-size: 13px;
+    font-weight: bold;
+    min-width: 35px;
+    text-align: right;
+    background-image: none;
+}
+
+/* Separador */
+#chapter-progress-separator {
+    font-size: 13px;
+    font-weight: normal;
+    min-width: auto;
+    width: auto;
+    color: #999;
+    cursor: default;
+    padding: 0 4px;
+}
+
+#chapter-progress-separator:hover {
+    transform: none;
+    color: #999;
+}
+
+/* Ícone/Texto: Total de capítulos */
+#chapter-progress-total {
+    font-size: 13px;
+    font-weight: bold;
+    min-width: 35px;
+    text-align: left;
+    background-image: none;
+    color: #666;
+}
+
+/* Ícone: Próximo capítulo */
+#chapter-progress-next {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"/></svg>');
+}
+
+/* Ícone: Último capítulo */
+#chapter-progress-last {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>');
+}
+
+/* Modo escuro */
+body.dark-mode #chapter-progress {
+    background-color: #2d2d2d;
+}
+
+body.dark-mode #chapter-progress-bar {
+    background-color: #444;
+}
+
+body.dark-mode #chapter-progress-bar::before {
+    background-color: #4CAF50;
+}
+
+body.dark-mode .chapter-progress-tool {
+    color: #e0e0e0;
+}
+
+body.dark-mode #chapter-progress-total {
+    color: #b0b0b0;
+}
+
+body.dark-mode #chapter-progress-separator {
+    color: #666;
+}
+
+body.dark-mode #chapter-progress-first {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23e0e0e0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"/><line x1="5" y1="19" x2="5" y2="5"/></svg>');
+}
+
+body.dark-mode #chapter-progress-previous {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23e0e0e0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="19 20 9 12 19 4 19 20"/></svg>');
+}
+
+body.dark-mode #chapter-progress-next {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23e0e0e0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"/></svg>');
+}
+
+body.dark-mode #chapter-progress-last {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23e0e0e0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 4 15 12 5 20 5 4"/><line x1="19" y1="5" x2="19" y2="19"/></svg>');
+}

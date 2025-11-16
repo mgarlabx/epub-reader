@@ -1,0 +1,261 @@
+/* ================================================================================
+   Read Aloud Modal Styles
+   ================================================================================ */
+
+.read-aloud-modal {
+    position: fixed;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    z-index: 1000;
+    min-width: 300px;
+}
+
+.read-aloud-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+}
+
+.read-aloud-main-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.read-aloud-speed-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.read-aloud-speed-controls label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+}
+
+.read-aloud-speed-controls input[type="range"] {
+    width: 100%;
+    margin: 0;
+}
+
+#read-aloud-speed-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: #007bff;
+    min-width: 45px;
+    text-align: center;
+}
+
+.read-aloud-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.read-aloud-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.read-aloud-btn:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 123, 255, 0.3);
+}
+
+.read-aloud-btn:active {
+    transform: translateY(0);
+}
+
+.read-aloud-btn-play {
+    background: #28a745;
+    min-width: 60px;
+}
+
+.read-aloud-btn-play:hover {
+    background: #218838;
+    box-shadow: 0 2px 6px rgba(40, 167, 69, 0.3);
+}
+
+.read-aloud-btn-play svg {
+    width: 28px;
+    height: 28px;
+}
+
+.read-aloud-btn-icon {
+    background: #6c757d;
+}
+
+.read-aloud-btn-icon:hover {
+    background: #5a6268;
+    box-shadow: 0 2px 6px rgba(108, 117, 125, 0.3);
+}
+
+.read-aloud-close-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.read-aloud-close-btn:hover {
+    background: #c82333;
+    transform: rotate(90deg);
+}
+
+/* Range slider styling */
+#read-aloud-speed {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: #ddd;
+    border-radius: 3px;
+    outline: none;
+}
+
+#read-aloud-speed::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+#read-aloud-speed::-webkit-slider-thumb:hover {
+    background: #0056b3;
+    transform: scale(1.2);
+}
+
+#read-aloud-speed::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+}
+
+#read-aloud-speed::-moz-range-thumb:hover {
+    background: #0056b3;
+    transform: scale(1.2);
+}
+
+/* Highlight for text being read */
+.read-aloud-highlight {
+    background-color: #ffeb3b;
+    color: #000;
+    padding: 2px 4px;
+    border-radius: 3px;
+    font-weight: 500;
+    animation: pulse-highlight 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-highlight {
+    0%, 100% {
+        background-color: #ffeb3b;
+    }
+    50% {
+        background-color: #ffd700;
+    }
+}
+
+/* Dark mode support */
+body.dark-mode .read-aloud-modal {
+    background: #2d2d2d;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .read-aloud-speed-controls {
+    border-top-color: #444;
+}
+
+body.dark-mode .read-aloud-speed-controls label {
+    color: #e0e0e0;
+}
+
+body.dark-mode #read-aloud-speed {
+    background: #444;
+}
+
+body.dark-mode .read-aloud-highlight {
+    background-color: #ffa500;
+    color: #000;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .read-aloud-modal {
+        min-width: 280px;
+        padding: 15px;
+        left: 10px !important;
+        right: 10px;
+        max-width: calc(100vw - 20px);
+    }
+
+    .read-aloud-btn {
+        padding: 8px 12px;
+        font-size: 14px;
+        min-width: 45px;
+    }
+
+    .read-aloud-btn-play {
+        font-size: 18px;
+        min-width: 55px;
+    }
+
+    .read-aloud-btn-skip {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+}
+
+/* Accessibility */
+.read-aloud-btn:focus,
+#read-aloud-speed:focus,
+.read-aloud-close-btn:focus {
+    outline: 2px solid #007bff;
+    outline-offset: 2px;
+}
+
+body.dark-mode .read-aloud-btn:focus,
+body.dark-mode #read-aloud-speed:focus,
+body.dark-mode .read-aloud-close-btn:focus {
+    outline-color: #4dabf7;
+}

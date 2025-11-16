@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leitor EPUB</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="components/progress/style_progress.css">
+    <link rel="stylesheet" href="components/tools/style_tools.css">
+    <link rel="stylesheet" href="components/read-aloud/style_tools_read_aloud.css">
+    <link rel="stylesheet" href="components/reader/style_reader.css">
+</head>
+<body>
+    <div id="book-selector-container">
+        <select id="book-selector">
+            <option value="">Selecione um livro</option>
+        </select>
+    </div>
+    <div id="home">
+        <div id="book-cover"></div>
+        <div id="book-toc"></div>
+    </div>
+    <div id="chapter-container">
+        <div id="chapter-tools">
+            <div class="chapter-tool" id="chapter-tool-back"></div>
+            <div class="chapter-tool" id="chapter-tool-bookmark"></div>
+            <div class="chapter-tool" id="chapter-tool-search"></div>
+            <div class="chapter-tool" id="chapter-tool-font-size"></div>
+            <div class="chapter-tool" id="chapter-tool-dark-mode"></div>
+            <div class="chapter-tool" id="chapter-tool-read-aloud"></div>
+        </div>
+        <div id="chapter"></div>
+        <div id="chapter-progress">
+            <div>
+                <div id="chapter-progress-bar"></div>
+                <div id="chapter-progress-tools">
+                    <div class="chapter-progress-tool" id="chapter-progress-first"></div>
+                    <div class="chapter-progress-tool" id="chapter-progress-previous"></div>
+                    <div class="chapter-progress-tool" id="chapter-progress-current"></div>
+                    <div class="chapter-progress-tool" id="chapter-progress-separator">/</div>
+                    <div class="chapter-progress-tool" id="chapter-progress-total"></div>
+                    <div class="chapter-progress-tool" id="chapter-progress-next"></div>
+                    <div class="chapter-progress-tool" id="chapter-progress-last"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="components/progress/script_progress.js"></script>
+    <script src="components/tools/script_tools.js"></script>
+    <script src="components/read-aloud/script_tools_read_aloud.js"></script>
+    <script src="components/reader/script_reader.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
