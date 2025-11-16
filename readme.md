@@ -2,7 +2,7 @@
 
 Este tutorial explica como criar um leitor de EPUBs customizado. O objetivo não é criar leitores genéricos (há muitos disponíveis), mas sim demonstrar como incorporar um leitor de EPUB em suas aplicações específicas, permitindo personalização e controle sobre a experiência de leitura.
 
-<video src="video.mp4" controls></video>
+![Nome do vídeo](video.mp4)
 
 ## Parte 1 - Sobre os EPUBs
 
